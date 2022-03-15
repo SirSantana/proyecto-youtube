@@ -1,15 +1,28 @@
 .container {
   padding: 0 2rem;
 }
+.div{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+
+}
 
 .main {
   min-height: 100vh;
+  max-width: 420px;
+  align-content: center;
+  margin-left: auto;
+  margin-right: auto;
   padding: 4rem 0;
   flex: 1;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  background: rgb(28,21,33);
+  background: linear-gradient(0deg, rgba(28,21,33,1) 0%, rgba(94,8,151,1) 70%);
 }
 
 .footer {
@@ -29,7 +42,7 @@
 }
 
 .title a {
-  color: #0070f3;
+  color: #27c8b7;
   text-decoration: none;
 }
 
@@ -37,6 +50,9 @@
 .title a:focus,
 .title a:active {
   text-decoration: underline;
+  color: #27c8b7;
+  
+
 }
 
 .title {
@@ -48,12 +64,36 @@
 .title,
 .description {
   text-align: center;
+  color: #f1f1ff;
+
+  font-weight: 800;
+  font-size: 5rem;
+
 }
 
 .description {
-  margin: 4rem 0;
+  margin: 1.5rem 4rem;
   line-height: 1.5;
-  font-size: 1.5rem;
+  font-size: 2rem;
+
+}
+.description2 {
+  line-height: 1.5;
+  font-size: 1.2rem;
+  margin-top: 0;
+  color: #f1f1ff;
+  font-weight: 700;
+
+}
+.h3{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #27c8b7;
+  font-weight: bold;
+  font-size: 25px;
+  padding-top: 0px;
+  margin-top: 0px;
 }
 
 .code {
@@ -61,8 +101,8 @@
   border-radius: 5px;
   padding: 0.75rem;
   font-size: 1.1rem;
-  font-family: Menlo, Monaco, Lucida Console, Liberation Mono, DejaVu Sans Mono,
-    Bitstream Vera Sans Mono, Courier New, monospace;
+  font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
+    Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
 }
 
 .grid {
@@ -71,25 +111,34 @@
   justify-content: center;
   flex-wrap: wrap;
   max-width: 800px;
+  padding: 0px 20px 0px 20px;
+}
+.hr{
+  width: 350px;
+  border: 1px solid rgb(255, 255, 255);
+  margin-left: auto;
+  margin-right: auto;
+
 }
 
 .card {
   margin: 1rem;
   padding: 1.5rem;
   text-align: left;
-  color: inherit;
+  color: rgb(245, 245, 245);
   text-decoration: none;
-  border: 1px solid #eaeaea;
+  border: 1px solid rgb(171, 45, 255);
   border-radius: 10px;
   transition: color 0.15s ease, border-color 0.15s ease;
-  max-width: 300px;
+  max-width: 250px;
+  min-height: fit-content;
 }
 
 .card:hover,
 .card:focus,
 .card:active {
-  color: #0070f3;
-  border-color: #0070f3;
+  color: #20ecd8;
+  border-color: #1b998c;
 }
 
 .card h2 {
@@ -107,6 +156,61 @@
   height: 1em;
   margin-left: 0.5rem;
 }
+
+
+.button {
+  font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
+    Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
+  margin-top: 40px;
+  --glow-color: rgb(230, 203, 255);  
+  --glow-spread-color: rgba(191, 123, 255, 0.781);
+  --enhanced-glow-color: rgb(231, 206, 255);
+  --btn-color: rgb(100, 61, 136);
+  border: .25em solid var(--glow-color);
+  padding: 1em 3em;
+  color: var(--glow-color);
+  font-size: 15px;
+  font-weight: bold;
+  background-color: var(--btn-color);
+  border-radius: 1em;
+  outline: none;
+  box-shadow: 0 0 1em .25em var(--glow-color),
+         0 0 4em 1em var(--glow-spread-color),
+         inset 0 0 .75em .25em var(--glow-color);
+  text-shadow: 0 0 .5em var(--glow-color);
+  position: relative;
+  transition: all 0.3s;
+ }
+ 
+ .button::after {
+  pointer-events: none;
+  content: "";
+  position: absolute;
+  top: 120%;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  background-color: var(--glow-spread-color);
+  filter: blur(2em);
+  opacity: .7;
+  transform: perspective(1.5em) rotateX(35deg) scale(1, .6);
+ }
+ 
+ .button:hover {
+  color: var(--btn-color);
+  background-color: var(--glow-color);
+  box-shadow: 0 0 1em .25em var(--glow-color),
+         0 0 4em 2em var(--glow-spread-color),
+         inset 0 0 .75em .25em var(--glow-color);
+ }
+ 
+ .button:active {
+  box-shadow: 0 0 0.6em .25em var(--glow-color),
+         0 0 2.5em 2em var(--glow-spread-color),
+         inset 0 0 .5em .25em var(--glow-color);
+ }
+
+
 
 @media (max-width: 600px) {
   .grid {
