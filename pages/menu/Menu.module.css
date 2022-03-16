@@ -12,6 +12,7 @@
     color: white;
     transition: all .5s ease-in-out;
     animation: gradient 10s infinite cubic-bezier(.62, .28, .23, .99) both;
+    cursor: pointer;
    }
    
    .button:hover {
@@ -43,3 +44,83 @@
     flex-direction: column;
     padding: 10px;
 }
+.div{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+}
+.error{
+  font-size: 1.5rem;
+  color: #d40075;
+}
+.correct{
+    font-size: 2.0rem;
+    color: #20ecd8;
+    font-weight: 900;
+    margin-bottom: 0px;
+    margin: 0;
+  }
+  .h2{
+      color: #f1f1f1;
+      margin-bottom: 0px;
+      
+  }
+.divText{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin: 0px 30px 0px 30px;
+    color: white;
+}
+.grid {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+    max-width: 800px;
+    padding: 0px 20px 0px 20px;
+  }
+.card {
+    margin: 1rem;
+    padding: 20px 25px 30px 25px;
+    text-align: center;
+    color: #f1f1f1;
+
+    text-decoration: none;
+    border: 1px solid rgb(171, 45, 255);
+    border-radius: 10px;
+    transition: color 0.15s ease, border-color 0.15s ease;
+    max-width: 350px;
+    min-height: fit-content;
+    min-width: fit-content;
+
+  }
+  
+  .card:hover,
+  .card:focus,
+  .card:active {
+    color: #20ecd8;
+    border-color: #1b998c;
+  }
+  
+  .card h2 {
+    margin: 0 0 1rem 0;
+    font-size: 1.5rem;
+
+  }
+  
+  .card h5 {
+    margin: 0 0 10px 0;
+    font-size: 1.0rem;
+    line-height: 1.5;
+    text-align: left;
+  }
+  .hr{
+    width: 350px;
+    border: 1px solid rgb(255, 255, 255);
+    margin-left: auto;
+    margin-right: auto;
+  
+  }

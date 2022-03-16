@@ -1,0 +1,10 @@
+.div{
+    display: flex;
+    flex-direction: column;
+    margin: 20px;
+}
+.textfield{
+    color: white;
+    margin-bottom: 10px;
+    border-color: azure;
+}
