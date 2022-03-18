@@ -1,10 +1,18 @@
 import Layout from "../../components/Layout";
 import styles from "../../styles/Home.module.css";
 import Link from "next/link";
-export default function Historia() {
+import DBConnect from "../../libs/dbConnect";
+import HistoriaModel from "../../models/HistoriaModel";
+
+export default function Historia({questions}) {
+  console.log(questions)
   return (
     <Layout title={"History || know.ly"}>
       <div>
+        <h2>Preguntas de Historia</h2>
+        
+      </div>
+      {/* <div>
         <h4 className={styles.description}>
           ¿En qué año acabó la Segunda Guerra Mundial?
         </h4>
@@ -36,7 +44,24 @@ export default function Historia() {
           </div>
         <hr className={styles.hr}/>
         <h3 className={styles.h3}>Suscribete</h3>
-      </div>
+      </div> */}
+
     </Layout>
   );
+}
+export async function getServerSideProps(){
+  try {
+    await DBConnect()
+    const res = await HistoriaModel.find({})
+    const questions = res.map((el, index)=>{
+      const quest = el.toObject()
+      quest._id = quest._id.toString()
+      return quest
+    })
+    return {
+      props: {questions}
+    }
+  } catch (error) {
+    console.log(error);
+  }
 }

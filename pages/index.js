@@ -11,7 +11,7 @@ export default function Home() {
       <Link href="/menu">
       <a><button className={styles.button}>Aprender</button></a>
       </Link>
-      <Link href="/new">
+      <Link href="/menu/add">
       <a><button className={styles.button}>Crear</button></a>
       </Link>
     </Layout>
