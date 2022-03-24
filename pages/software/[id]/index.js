@@ -1,30 +1,39 @@
 import Layout from "../../../components/Layout";
-import styles from "../../menu/Menu.module.css";
+import SoftwareModel from "../../../models/SoftwareModel";
 import Link from "next/link";
-import HistoriaModel from "../../../models/HistoriaModel";
 import { useEffect, useState } from "react";
-import Correct from "../../../components/Correct";
+import styles from "../../menu/Menu.module.css";
 
-export default function ResponseHistory({ data }) {
-  const { pregunta,  link, _id, description } = data;
-  const [visible, setVisible] = useState(false)
+let initial = 10;
+export default function Index({ data }) {
+  const { pregunta, link, description } = data;
+  const [visible, setVisible] = useState(false);
+  const [count, setCount] = useState(initial);
 
-  useEffect(()=>{
-   const time=  setTimeout(()=>{
-      setVisible(true)
-    },10000)
-    return clearTimeout(time)
-  },[])
+  useEffect(() => {
+    setInterval(() => {
+      if (visible === false) {
+        setCount((prevCount) => prevCount - 1);
+      }
+    }, 1000);
+    setTimeout(() => {
+      setVisible(true);
+    }, 10000);
+  }, []);
 
   return (
-    <Layout title={`${pregunta} || know.ly`}>
-     <div className={styles.div1}>
+    <Layout>
+      <div className={styles.div1}>
         <h4 className={styles.description}>{pregunta}</h4>
 
         <div className={styles.grid}>
           <div className={styles.card1}>
-            <h3 className={styles.description}>Recordemos...</h3>
-            {visible ? <h5 className={styles.descrip}>{description}</h5> : <h2>Tienes 5 segundos para recordar</h2>}
+            <h3 className={styles.descriptionn}>Recordemos...</h3>
+            {visible ? (
+              <h5 className={styles.descrip}>{description}</h5>
+            ) : (
+              <h2>{count}</h2>
+            )}
             <Link href={link}>
               <a target="_blank">
                 <button className={styles.buttonn}>Ver más</button>
@@ -32,13 +41,9 @@ export default function ResponseHistory({ data }) {
             </Link>
           </div>
           <div className={styles.div}>
-            <Link href="/historia">
+            <Link href="/nextjs">
               <a>
-                <button
-                  className={styles.button}
-                >
-                  Regresar
-                </button>
+                <button className={styles.button}>Regresar</button>
               </a>
             </Link>
 
@@ -53,7 +58,7 @@ export default function ResponseHistory({ data }) {
 }
 export async function getServerSideProps({ params }) {
   try {
-    const res = await HistoriaModel.findById(params.id);
+    const res = await SoftwareModel.findById(params.id);
     const data = res.toObject();
     data._id = data._id.toString();
     return {

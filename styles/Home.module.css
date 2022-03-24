@@ -65,7 +65,6 @@
 .description {
   text-align: center;
   color: #f1f1ff;
-
   font-weight: 800;
   font-size: 5rem;
 
@@ -181,6 +180,7 @@
   text-shadow: 0 0 .5em var(--glow-color);
   position: relative;
   transition: all 0.3s;
+  min-width: 180px;
  }
  
  .button::after {

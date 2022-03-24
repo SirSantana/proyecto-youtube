@@ -10,14 +10,17 @@ export default function MenuAdd(){
                 <Link href="/historia/add">
                 <a><button className={styles.button}>Historia</button></a>
                 </Link>
-                <Link href="/historia">
-                <a><button className={styles.button}>Religion</button></a>
+                <Link href="/nextjs/add">
+                <a><button className={styles.button}>Next.Js</button></a>
                 </Link>
-                <Link href="/historia">
-                <a><button className={styles.button}>Matematica</button></a>
+                <Link href="/matematicas/add">
+                <a><button className={styles.button}>Matematicas</button></a>
                 </Link>
-                <Link href="/historia">
+                <Link href="/historia/add">
                 <a><button className={styles.button}>Personajes</button></a>
+                </Link>
+                <Link href="/software/add">
+                <a><button className={styles.button}>Ing.Software</button></a>
                 </Link>
             </nav>
         </Layout>

@@ -10,14 +10,17 @@ export default function Menu(){
                 <Link href="/historia">
                 <a><button className={styles.button}>Historia</button></a>
                 </Link>
-                <Link href="/historia">
-                <a><button className={styles.button}>Religion</button></a>
+                <Link href="/nextjs">
+                <a><button className={styles.button}>Next.Js</button></a>
                 </Link>
-                <Link href="/historia">
-                <a><button className={styles.button}>Matematica</button></a>
+                <Link href="/matematicas">
+                <a><button className={styles.button}>Matematicas</button></a>
                 </Link>
                 <Link href="/historia">
                 <a><button className={styles.button}>Personajes</button></a>
+                </Link>
+                <Link href="/software">
+                <a><button className={styles.button}>Ing.Software</button></a>
                 </Link>
             </nav>
         </Layout>

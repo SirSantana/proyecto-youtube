@@ -1,7 +1,7 @@
 import mongoose from 'mongoose'
 
 
-const HistoriaSchema = new mongoose.Schema({
+const softwareSchema = new mongoose.Schema({
     pregunta:{type: String, required:[true, 'Debes añadir una pregunta']},
     description:{type: String, required:[true, 'Debes añadir solo una repuesta bien']},
     link:{type:String, required: true}
@@ -9,4 +9,4 @@ const HistoriaSchema = new mongoose.Schema({
     versionKey:false 
 })
 
-export default mongoose.models.Historia || mongoose.model('Historia', HistoriaSchema)
+export default mongoose.models.software || mongoose.model('software', softwareSchema)

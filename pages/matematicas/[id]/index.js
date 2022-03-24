@@ -1,30 +1,24 @@
 import Layout from "../../../components/Layout";
-import styles from "../../menu/Menu.module.css";
 import Link from "next/link";
-import HistoriaModel from "../../../models/HistoriaModel";
-import { useEffect, useState } from "react";
 import Correct from "../../../components/Correct";
+import { useState } from "react";
+import styles from "../../menu/Menu.module.css";
+import MatematicasModel from "../../../models/MatematicasModel";
 
-export default function ResponseHistory({ data }) {
-  const { pregunta,  link, _id, description } = data;
-  const [visible, setVisible] = useState(false)
-
-  useEffect(()=>{
-   const time=  setTimeout(()=>{
-      setVisible(true)
-    },10000)
-    return clearTimeout(time)
-  },[])
-
+export default function Index({ data }) {
+  const { pregunta, link, _id, description } = data;
+  const handleClick=(e)=>{
+    
+  }
   return (
     <Layout title={`${pregunta} || know.ly`}>
-     <div className={styles.div1}>
+      <div className={styles.div1}>
         <h4 className={styles.description}>{pregunta}</h4>
 
         <div className={styles.grid}>
           <div className={styles.card1}>
             <h3 className={styles.description}>Recordemos...</h3>
-            {visible ? <h5 className={styles.descrip}>{description}</h5> : <h2>Tienes 5 segundos para recordar</h2>}
+            <h5 className={styles.descrip}>{description}</h5>
             <Link href={link}>
               <a target="_blank">
                 <button className={styles.buttonn}>Ver más</button>
@@ -32,7 +26,7 @@ export default function ResponseHistory({ data }) {
             </Link>
           </div>
           <div className={styles.div}>
-            <Link href="/historia">
+            <Link href="/matematicas">
               <a>
                 <button
                   className={styles.button}
@@ -43,6 +37,8 @@ export default function ResponseHistory({ data }) {
             </Link>
 
             <button className={styles.button}>Siguiente</button>
+            <button className={styles.button} onClick={handleClick}>Editar</button>
+
           </div>
         </div>
         <hr className={styles.hr} />
@@ -53,7 +49,7 @@ export default function ResponseHistory({ data }) {
 }
 export async function getServerSideProps({ params }) {
   try {
-    const res = await HistoriaModel.findById(params.id);
+    const res = await MatematicasModel.findById(params.id);
     const data = res.toObject();
     data._id = data._id.toString();
     return {

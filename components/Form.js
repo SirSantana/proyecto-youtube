@@ -1,9 +1,10 @@
-import { Link, TextField } from "@material-ui/core";
+import { TextField } from "@material-ui/core";
 import styles from "./Form.module.css";
 import stylesBtn from "../pages/menu/Menu.module.css";
 import { makeStyles } from "@material-ui/core/styles";
 import { useState } from "react";
 import { useRouter } from "next/router";
+import Link from "next/link";
 
 const useStyles = makeStyles((theme) => ({
   textField: {
@@ -12,15 +13,11 @@ const useStyles = makeStyles((theme) => ({
 }));
 const initial = {
   pregunta: "",
-  r1: "",
-  r2: "",
-  r3: "",
-  rC: "",
   description: "",
   link: "",
 };
 
-export default function Form({ newQuest = true }) {
+export default function Form({ url, route,newQuest = true }) {
   const classes = useStyles();
   const [message, setMessage] = useState("");
   const router = useRouter();
@@ -41,7 +38,7 @@ export default function Form({ newQuest = true }) {
   };
   const postData = async (form) => {
     try {
-      const res = await fetch("/api/historia", {
+      const res = await fetch(url, {
         method: "POST",
         headers: { "Content-type": "application/json" },
         body: JSON.stringify(form),
@@ -50,7 +47,7 @@ export default function Form({ newQuest = true }) {
       if (!data.success) {
         setMessage(data?.error);
       } else {
-        router.push("/historia");
+        router.push(route);
       }
     } catch (error) {
       console.log(error);
@@ -72,44 +69,6 @@ export default function Form({ newQuest = true }) {
             value={form.pregunta}
             onChange={handleChange}
           />
-          <div className={styles.grid}>
-            <TextField
-              className={styles.textField}
-              label="R. Incorrecta 1"
-              variant="outlined"
-              color="primary"
-              value={form.r1}
-              name="r1"
-              onChange={handleChange}
-            />
-            <TextField
-              className={styles.textField}
-              label="R. Incorrecta 2"
-              variant="outlined"
-              color="primary"
-              value={form.r2}
-              name="r2"
-              onChange={handleChange}
-            />
-            <TextField
-              className={styles.textField}
-              label="R. Incorrecta 3"
-              variant="outlined"
-              color="primary"
-              value={form.r3}
-              name="r3"
-              onChange={handleChange}
-            />
-            <TextField
-              className={styles.textField}
-              label="Respuesta Correcta"
-              variant="outlined"
-              color="primary"
-              value={form.rC}
-              name="rC"
-              onChange={handleChange}
-            />
-          </div>
           <TextField
             className={styles.textFieldPre}
             label="Descripcion Respuesta"
@@ -130,25 +89,23 @@ export default function Form({ newQuest = true }) {
             name="link"
             onChange={handleChange}
           />
+        <hr className={styles.hr}/>
+        <div className={styles.div1}>
+
           <input
             type="submit"
             className={stylesBtn.button}
             value={newQuest ? "Agregar" : "Editar"}
           />
-            
-        </form>
-        <hr className={styles.hr}/>
-
-        <div className={styles.div1}>
-          
-
-          {message}
-          <Link href="/historia">
+            <Link href="/menu/add">
             <a>
               <button className={stylesBtn.button}>Regresar</button>
             </a>
-          </Link>
+            </Link>
         </div>
+        </form>
+          {message}
+          
       </div>
     </>
   );

@@ -7,7 +7,7 @@ export default function ModalErr(){
         <Layout>
             <div>
                 <h2 className={styles.error}>Ups, esa no es</h2>
-                <Link href="/historia">
+                <Link href="/">
                 <a><button className={styles.button}>Regresar</button></a>
                 </Link>
             </div>

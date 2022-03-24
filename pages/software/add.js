@@ -2,10 +2,10 @@ import Form from "../../components/Form";
 import Layout from "../../components/Layout";
 
 
-export default function New(){
+export default function Add(){
     return(
         <Layout>
-            <Form url={"/api/historia"} route={"/historia"}/>
+            <Form route={"/software"} url={"/api/software"}/>
         </Layout>
     )
 }
