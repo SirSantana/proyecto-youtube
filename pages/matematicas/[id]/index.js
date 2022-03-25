@@ -5,6 +5,8 @@ import { useState, useEffect } from "react";
 import styles from "../../menu/Menu.module.css";
 import MatematicasModel from "../../../models/MatematicasModel";
 
+let initial = 10;
+
 export default function Index({ data }) {
   const { pregunta, link, _id, description } = data;
   const [visible, setVisible] = useState(false);

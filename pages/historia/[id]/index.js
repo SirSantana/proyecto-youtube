@@ -5,6 +5,8 @@ import HistoriaModel from "../../../models/HistoriaModel";
 import { useEffect, useState } from "react";
 import Correct from "../../../components/Correct";
 
+let initial = 10;
+
 export default function ResponseHistory({ data }) {
   const { pregunta,  link, _id, description } = data;
 
