@@ -8,7 +8,7 @@ export default function Menu(){
         <Layout title={"know.ly || Home"}>
             <nav className={styles.nav}>
                 <Link href="/historia">
-                <a><button className={styles.button}>Historia</button></a>
+                <a><button className={styles.button}>Ingles</button></a>
                 </Link>
                 <Link href="/nextjs">
                 <a><button className={styles.button}>Next.Js</button></a>
