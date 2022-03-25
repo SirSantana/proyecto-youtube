@@ -8,7 +8,7 @@ export default function Historia({ questions }) {
   return (
     <Layout title={"History || know.ly"}>
       <div className={styles.div1}>
-        <h2 className={styles.h2}>Preguntas de Historia</h2>
+        <h2 className={styles.h2}>Preguntas de Ingles</h2>
         <hr className={styles.hr}/>
         {questions.map(({ _id, pregunta }) => (
           <div key={_id} className={styles.div}>
