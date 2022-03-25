@@ -3,9 +3,9 @@ require("dotenv").config()
 const nextConfig = {
   reactStrictMode: true,
   env: {
-    USER: santaNaN,
-    PASSWORD: v4y1qou2NEAzXBax,
-    DBNAME: myFirstDatabase,
+    USER: process.env.USER,
+    PASSWORD: process.env.PASSWORD,
+    DBNAME: process.env.DBNAME,
   },
 };
 module.exports = nextConfig;
