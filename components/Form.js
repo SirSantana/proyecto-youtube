@@ -17,11 +17,11 @@ const initial = {
   link: "",
 };
 
-export default function Form({ url, route,newQuest = true,formm={formm} }) {
+export default function Form({ url, route,newQuest = true,formm }) {
   const classes = useStyles();
   const [message, setMessage] = useState("");
   const router = useRouter();
-  const [form, setForm] = useState( formm ||initial);
+  const [form, setForm] = useState(formm ||initial);
 
   const handleChange = (e) => {
     setForm({ ...form, [e.target.name]: e.target.value });
