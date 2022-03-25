@@ -60,7 +60,7 @@ export default function Form({ url, route,newQuest = true,formm }) {
     try {
       const res = await fetch(url, {
         method: "POST",
-        headers: { "Content-type": "application/json" },
+        headers: {"Content-type": 'application/json'},
         body: JSON.stringify(form),
       });
       const data = await res.json();
