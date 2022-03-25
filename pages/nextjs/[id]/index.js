@@ -22,7 +22,7 @@ export default function RespondeNext({data}){
       setTimeout(()=>{
         setVisible(true)
     },10000) 
-    },[])
+    },[visible])
     
      
    

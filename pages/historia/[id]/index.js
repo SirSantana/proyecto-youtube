@@ -9,12 +9,7 @@ export default function ResponseHistory({ data }) {
   const { pregunta,  link, _id, description } = data;
   const [visible, setVisible] = useState(false)
 
-  useEffect(()=>{
-   const time=  setTimeout(()=>{
-      setVisible(true)
-    },10000)
-    return clearTimeout(time)
-  },[])
+  
 
   return (
     <Layout title={`${pregunta} || know.ly`}>
