@@ -17,11 +17,11 @@ const initial = {
   link: "",
 };
 
-export default function Form({ url, route,newQuest = true }) {
+export default function Form({ url, route,newQuest = true,formm={formm} }) {
   const classes = useStyles();
   const [message, setMessage] = useState("");
   const router = useRouter();
-  const [form, setForm] = useState(initial);
+  const [form, setForm] = useState( formm ||initial);
 
   const handleChange = (e) => {
     setForm({ ...form, [e.target.name]: e.target.value });
@@ -34,8 +34,28 @@ export default function Form({ url, route,newQuest = true }) {
         console.log('Algo')
       postData(form);
     } else {
+      putData(form)
     }
   };
+
+  const putData =async(form)=>{
+    try {
+      const res = await fetch(url,{
+        method: 'PUT',
+        headers: {"Content-type": 'application/json'},
+        body: JSON.stringify(form)
+      })
+      const data = await res.json();
+      if (!data.success) {
+        setMessage(data?.error);
+      } else {
+        router.push(route);
+      }
+    } catch (error) {
+      console.log(error);
+    }
+  }
+
   const postData = async (form) => {
     try {
       const res = await fetch(url, {

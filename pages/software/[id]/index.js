@@ -6,7 +6,7 @@ import styles from "../../menu/Menu.module.css";
 
 let initial = 10;
 export default function Index({ data }) {
-  const { pregunta, link, description } = data;
+  const { pregunta, link, description,_id } = data;
   const [visible, setVisible] = useState(false);
   const [count, setCount] = useState(initial);
 
@@ -19,7 +19,7 @@ export default function Index({ data }) {
     setTimeout(() => {
       setVisible(true);
     }, 10000);
-  }, []);
+  }, [visible]);
 
   return (
     <Layout>
@@ -47,7 +47,9 @@ export default function Index({ data }) {
               </a>
             </Link>
 
-            <button className={styles.button}>Siguiente</button>
+            <Link href={`/software/${_id}/editar`}>
+            <a><button className={styles.button}>Editar</button></a>
+            </Link>
           </div>
         </div>
         <hr className={styles.hr} />

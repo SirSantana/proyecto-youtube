@@ -3,7 +3,7 @@ import NextjsModel from "../../../models/NextjsModel";
 
 
 export default async function handler(req, res){
-    DBConnect()
+   await DBConnect()
     const {method, query:{id}} = req;
     switch (method) {
         case 'GET':
