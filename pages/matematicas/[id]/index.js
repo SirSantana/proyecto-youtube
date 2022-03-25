@@ -7,9 +7,20 @@ import MatematicasModel from "../../../models/MatematicasModel";
 
 export default function Index({ data }) {
   const { pregunta, link, _id, description } = data;
-  const handleClick=(e)=>{
-    
-  }
+  const [visible, setVisible] = useState(false);
+  const [count, setCount] = useState(initial);
+
+  useEffect(() => {
+    setInterval(() => {
+      if (visible === false) {
+        setCount((prevCount) => prevCount - 1);
+      }
+    }, 1000);
+    setTimeout(() => {
+      setVisible(true);
+    }, 10000);
+  }, [visible]);
+
   return (
     <Layout title={`${pregunta} || know.ly`}>
       <div className={styles.div1}>
@@ -18,7 +29,11 @@ export default function Index({ data }) {
         <div className={styles.grid}>
           <div className={styles.card1}>
             <h3 className={styles.description}>Recordemos...</h3>
-            <h5 className={styles.descrip}>{description}</h5>
+            {visible ? (
+              <h5 className={styles.descrip}>{description}</h5>
+            ) : (
+              <h2>{count}</h2>
+            )}
             <Link href={link}>
               <a target="_blank">
                 <button className={styles.buttonn}>Ver más</button>

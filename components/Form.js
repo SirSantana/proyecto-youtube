@@ -111,17 +111,17 @@ export default function Form({ url, route,newQuest = true,formm }) {
           />
         <hr className={styles.hr}/>
         <div className={styles.div1}>
-
+        <Link href="/menu/add">
+            <a>
+              <button className={stylesBtn.button}>Regresar</button>
+            </a>
+            </Link>
           <input
             type="submit"
             className={stylesBtn.button}
             value={newQuest ? "Agregar" : "Editar"}
           />
-            <Link href="/menu/add">
-            <a>
-              <button className={stylesBtn.button}>Regresar</button>
-            </a>
-            </Link>
+            
         </div>
         </form>
           {message}
