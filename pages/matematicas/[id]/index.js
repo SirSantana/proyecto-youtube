@@ -1,7 +1,7 @@
 import Layout from "../../../components/Layout";
 import Link from "next/link";
 import Correct from "../../../components/Correct";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import styles from "../../menu/Menu.module.css";
 import MatematicasModel from "../../../models/MatematicasModel";
 
