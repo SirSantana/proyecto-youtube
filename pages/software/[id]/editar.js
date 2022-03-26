@@ -19,9 +19,7 @@ const fetcher = async (url) => {
 export default function Editar() {
   const router = useRouter();
   const { id } = router.query;
-  console.log(id);
 
-  console.log(id)
   const { data: software, error } =  useSWR(
     id ? `/api/software/${id}` : null,
     fetcher

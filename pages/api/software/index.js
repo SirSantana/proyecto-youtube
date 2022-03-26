@@ -10,7 +10,7 @@ export default async function handler(req, res){
             try {
                 const newQuest = new SoftwareModel(req.body)
                 await newQuest.save()
-                res.status(200).json({success: true, newQuest})
+               return res.status(200).json({success: true, newQuest})
             } catch (error) {
                 res.status(403).json({success: false, error: 'Algo ha fallado bro'})
             }    
