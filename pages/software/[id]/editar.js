@@ -47,13 +47,13 @@ export default function Editar({data}) {
   //   );
   return (
     <Layout>
-      <Form newQuest={false} formm={formm} route={"/software"} url={`http://localhost:3000/api/software/${id}`}/>
+      <Form newQuest={false} formm={formm} route={"/software"} url={`/api/software/${id}`}/>
     </Layout>
   );
 }
 export async function getServerSideProps({params}){
   try {
-    const res = await fetch(params.id ? `http://localhost:3000/api/software/${params.id}`: null)
+    const res = await fetch(params.id ? `/api/software/${params.id}`: null)
     const data = await res.json()
     return {
       props: {data}
