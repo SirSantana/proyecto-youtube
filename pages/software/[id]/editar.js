@@ -2,6 +2,7 @@ import Form from "../../../components/Form";
 import Layout from "../../../components/Layout";
 import useSWR from "swr";
 import { useRouter } from "next/router";
+import { useEffect } from "react";
 
 const fetcher = async (url) => {
   const res = await fetch(url);
@@ -25,6 +26,9 @@ export default function Editar() {
     id ? `http://localhost:3000/api/software/${id}` : null,
     fetcher
   );
+  useEffect(()=>{
+    fetcher
+  },[software])
 
   if (!software)
     return (
@@ -45,6 +49,7 @@ export default function Editar() {
     );
   return (
     <Layout>
+
       <Form newQuest={false} formm={formm} route={"/software"} url={`http://localhost:3000/api/software/${id}`}/>
     </Layout>
   );
