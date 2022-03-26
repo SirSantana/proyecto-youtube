@@ -22,7 +22,7 @@ export default function Editar() {
 
   console.log(id)
   const { data: software, error } = useSWR(
-    id ? `/api/software/${id}` : null,
+    id ? `http://localhost:3000/api/software/${id}` : null,
     fetcher
   );
 
@@ -45,7 +45,7 @@ export default function Editar() {
     );
   return (
     <Layout>
-      <Form newQuest={false} formm={formm} route={"/software"} url={`/api/software/${id}`}/>
+      <Form newQuest={false} formm={formm} route={"/software"} url={`http://localhost:3000/api/software/${id}`}/>
     </Layout>
   );
 }

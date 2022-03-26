@@ -12,7 +12,7 @@ export default async function handler(req, res){
              try {
                  const Quest = await MatematicasModel.findById(id)
                  if(!Quest) return res.status(403).json({success: false, error: 'Algo ha salido mal bro'})
-                 res.status(200).json({success: true, data: Quest})
+                return  res.status(200).json({success: true, data: Quest})
              } catch (error) {
                  res.status(403).json({success: false, error: 'Algo ha salido mal'})
              }

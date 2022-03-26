@@ -18,6 +18,8 @@ const initial = {
 };
 
 export default function Form({ url, route,newQuest = true,formm }) {
+  console.log(url);
+
   const classes = useStyles();
   const [message, setMessage] = useState("");
   const router = useRouter();
@@ -31,20 +33,19 @@ export default function Form({ url, route,newQuest = true,formm }) {
     e.preventDefault();
 
     if (newQuest) {
-        console.log('Algo')
       postData(form);
     } else {
       putData(form)
     }
   };
 
-  const putData =async(form)=>{
+  const putData =async(formm)=>{
     try {
-      const res = await fetch(url,{
-        method: 'PUT',
+      const res = await fetch(url, {
+        method: "PUT",
         headers: {"Content-type": 'application/json'},
-        body: JSON.stringify(form)
-      })
+        body: JSON.stringify(formm),
+      });
       const data = await res.json();
       if (!data.success) {
         setMessage(data?.error);

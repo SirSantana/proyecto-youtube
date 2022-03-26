@@ -9,7 +9,7 @@ export default async function handler(req,res){
             try {
                 const Quest = await HistoriaModel.findById(id).lean()
                 if(!Quest) return res.status(403).json({success: false, error: 'No existe la quest'})
-                res.status(200).json({success: true, data: Quest})
+               return  res.status(200).json({success: true, data: Quest})
 
             } catch (error) {
                 res.status(403).json({error: 'Ha ocurrido un error'})
