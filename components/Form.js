@@ -18,7 +18,6 @@ const initial = {
 };
 
 export default function Form({ url, route,newQuest = true,formm }) {
-  console.log(url);
 
   const classes = useStyles();
   const [message, setMessage] = useState("");
@@ -112,7 +111,7 @@ export default function Form({ url, route,newQuest = true,formm }) {
           />
         <hr className={styles.hr}/>
         <div className={styles.div1}>
-        <Link href="/menu/add">
+        <Link href={newQuest ? "/menu/add" : '/menu'}>
             <a>
               <button className={stylesBtn.button}>Regresar</button>
             </a>

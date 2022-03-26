@@ -41,7 +41,7 @@ export default function Index({ data }) {
             </Link>
           </div>
           <div className={styles.div}>
-            <Link href="/nextjs">
+            <Link href="/software">
               <a>
                 <button className={styles.button}>Regresar</button>
               </a>

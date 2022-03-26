@@ -16,49 +16,49 @@ const fetcher = async (url) => {
 
   return data;
 };
-export default function Editar({data}) {
+export default function Editar() {
   const router = useRouter();
   const { id } = router.query;
   console.log(id);
-  const {pregunta, description, link} = data.data;
 
-  // console.log(id)
-  // const { data: software, error } = useSWR(
-  //   id ? `http://localhost:3000/api/software/${id}` : null,
-  //   fetcher
-  // );
+  console.log(id)
+  const { data: software, error } =  useSWR(
+    id ? `/api/software/${id}` : null,
+    fetcher
+  );
 
-  if (!data)
+
+  if (!software)
     return (
       <Layout>
         <h2>Loading...</h2>
       </Layout>
     );
   const formm = {
-    pregunta: pregunta,
-    description: description,
-    link: link,
+    pregunta: software.pregunta,
+    description: software.description,
+    link: software.link,
   };
-  // if (error)
-  //   return (
-  //     <Layout>
-  //       <h2>Error</h2>
-  //     </Layout>
-  //   );
+  if (error)
+    return (
+      <Layout>
+        <h2>Error</h2>
+      </Layout>
+    );
   return (
     <Layout>
       <Form newQuest={false} formm={formm} route={"/software"} url={`/api/software/${id}`}/>
     </Layout>
   );
 }
-export async function getServerSideProps({params}){
-  try {
-    const res = await fetch(params.id ? `/api/software/${params.id}`: null)
-    const data = await res.json()
-    return {
-      props: {data}
-    }
-  } catch (error) {
-   console.log(error); 
-  }
-}
+// export async function getServerSideProps({params}){
+//   try {
+//     const res = await fetch(params.id ? `/api/software/${params.id}`: null)
+//     const data = await res.json()
+//     return {
+//       props: {data}
+//     }
+//   } catch (error) {
+//    console.log(error); 
+//   }
+// }
