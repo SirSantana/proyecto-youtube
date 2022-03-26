@@ -26,16 +26,9 @@ export default function Editar() {
     id ? `http://localhost:3000/api/software/${id}` : null,
     fetcher
   );
-  useEffect(()=>{
-    fetcher
-  },[software])
 
-  if (!software)
-    return (
-      <Layout>
-        <h2>Loading...</h2>
-      </Layout>
-    );
+
+  
   const formm = {
     pregunta: software.pregunta,
     description: software.description,
