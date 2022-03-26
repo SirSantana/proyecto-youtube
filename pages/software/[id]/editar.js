@@ -26,7 +26,8 @@ export default function Editar() {
     id ? `http://localhost:3000/api/software/${id}` : null,
     fetcher
   );
-
+  useEffect(()=>{
+  },[software])
 
   
   const formm = {
