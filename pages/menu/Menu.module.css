@@ -95,7 +95,9 @@
     animation: gradient 10s infinite cubic-bezier(.62, .28, .23, .99) both;
     cursor: pointer;
    }
-   
+   .section{
+     max-width: 90vw;
+   }
    .buttonn:hover {
     animation: gradient 3s infinite;
     transform: scale(1.05);
@@ -164,6 +166,7 @@
   font-size: 1rem;
   text-align: center;
   color: #f1f1ff;
+  max-width: 340px;
 
 }
 .correct{

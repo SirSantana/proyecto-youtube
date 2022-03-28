@@ -11,7 +11,7 @@ export default async function handler(req, res){
             try {
                 const quest = await SoftwareModel.findByIdAndUpdate(id, req.body,{new:true, runValidators:true})
                 if(!quest) return res.status(403).json({success: false, error: 'Algo ha fallado bro'})
-                res.status(200).json({success: true, data: quest})
+                return res.status(200).json({success: true, data: quest})
             } catch (error) {
                 res.status(403).json({success: false, error: 'Algo ha fallado bro'})
             }

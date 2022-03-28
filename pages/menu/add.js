@@ -22,6 +22,9 @@ export default function MenuAdd(){
                 <Link href="/software/add">
                 <a><button className={styles.button}>Ing.Software</button></a>
                 </Link>
+                <Link href="/javascript/add">
+                <a><button className={styles.button}>Javascript</button></a>
+                </Link>
             </nav>
         </Layout>
         </>

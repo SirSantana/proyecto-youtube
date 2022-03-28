@@ -64,6 +64,9 @@ export default function Form({ url, route,newQuest = true,formm }) {
         body: JSON.stringify(form),
       });
       const data = await res.json();
+      if(!data){
+        setMessage('Cargando')
+      }      
       if (!data.success) {
         setMessage(data?.error);
       } else {
@@ -89,13 +92,13 @@ export default function Form({ url, route,newQuest = true,formm }) {
             value={form.pregunta}
             onChange={handleChange}
           />
-          <TextField
+          <textarea
             className={styles.textFieldPre}
             label="Descripcion Respuesta"
-            variant="outlined"
-            color="primary"
-            multiline
-            minRows={3}
+            // variant="outlined"
+            // color="primary"
+            // multiline
+            // minRows={3}
             value={form.description}
             name="description"
             onChange={handleChange}
@@ -125,7 +128,6 @@ export default function Form({ url, route,newQuest = true,formm }) {
         </div>
         </form>
           {message}
-          
       </div>
     </>
   );

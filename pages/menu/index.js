@@ -22,6 +22,9 @@ export default function Menu(){
                 <Link href="/software">
                 <a><button className={styles.button}>Ing.Software</button></a>
                 </Link>
+                <Link href="/javascript">
+                <a><button className={styles.button}>Javascript</button></a>
+                </Link>
             </nav>
         </Layout>
         </>
