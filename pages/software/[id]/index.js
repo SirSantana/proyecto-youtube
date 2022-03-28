@@ -30,7 +30,9 @@ export default function Index({ data }) {
           <div className={styles.card1}>
             <h3 className={styles.descriptionn}>Recordemos...</h3>
             {visible ? (
-              <h5 className={styles.descrip}>{description}</h5>
+              <section className={styles.section}>
+              <pre className={styles.descrip}>{description}</pre>
+              </section>
             ) : (
               <h2>{count}</h2>
             )}
