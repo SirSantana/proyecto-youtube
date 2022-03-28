@@ -28,7 +28,7 @@ export default function Layout({title, description, children}){
           {children}
           </main>
 
-      <footer className={styles.footer}>
+      {/* <footer className={styles.footer}>
         <a
           href=""
           target="_blank"
@@ -39,7 +39,7 @@ export default function Layout({title, description, children}){
             <Image src="/vercel.svg" alt="Vercel Logo" width={72} height={16} />
           </span>
         </a>
-      </footer>
+      </footer> */}
     </div>
     )
 }
