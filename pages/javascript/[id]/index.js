@@ -5,7 +5,7 @@ import Link from "next/link";
 import { useEffect, useState } from "react";
 import styles from "../../menu/Menu.module.css";
 
-let initial = 10;
+let initial = 5;
 export default function Index({ quest }) {
   const { pregunta, link, _id, description } = quest;
 
@@ -20,7 +20,7 @@ export default function Index({ quest }) {
     }, 1000);
     setTimeout(() => {
       setVisible(true);
-    }, 10000);
+    }, 5000);
   }, [visible]);
   return (
     <Layout title={`${pregunta} || know.ly`}>

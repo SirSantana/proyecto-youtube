@@ -1,17 +1,19 @@
 .container {
   padding: 0 0;
+  width: 100vw;
 }
 .div{
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
+  width: 100vw;
 
 }
 
 .main {
   min-height: 100vh;
-  max-width: 420px;
+  max-width: 100vw;
   align-content: center;
   margin-left: auto;
   margin-right: auto;

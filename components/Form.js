@@ -81,20 +81,19 @@ export default function Form({ url, route,newQuest = true,formm }) {
     <>
       <div className={styles.div}>
         <form className={styles.div} onSubmit={handleSubmit}>
-          <TextField
+          <textarea
             className={styles.textFieldPre}
-            label="Pregunta"
-            variant="outlined"
-            color="secondary"
-            multiline
-            minRows={2}
+            placeholder="Pregunta"
+            // variant="outlined"
+            // multiline
+            // minRows={2}
             name="pregunta"
             value={form.pregunta}
             onChange={handleChange}
           />
           <textarea
             className={styles.textFieldPre}
-            label="Descripcion Respuesta"
+            placeholder="Descripcion Respuesta"
             // variant="outlined"
             // color="primary"
             // multiline
