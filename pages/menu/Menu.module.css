@@ -95,9 +95,6 @@
     animation: gradient 10s infinite cubic-bezier(.62, .28, .23, .99) both;
     cursor: pointer;
    }
-   .section{
-     max-width: 100vw;
-   }
    .buttonn:hover {
     animation: gradient 3s infinite;
     transform: scale(1.05);
@@ -197,7 +194,7 @@
     align-items: center;
     justify-content: center;
     flex-wrap: wrap;
-    max-width: 600px;
+    max-width: 100vw;
   }
 .card {
     margin: 0.2rem;
