@@ -166,8 +166,9 @@
   font-size: 1.2rem;
   text-align: left;
   color: #f1f1ff;
-  max-width: 340px;
-
+  max-width: 100vw;
+  width: 350px;
+  height: fit-content;
 }
 .correct{
     font-size: 2.2rem;
@@ -196,8 +197,7 @@
     align-items: center;
     justify-content: center;
     flex-wrap: wrap;
-    max-width: 800px;
-    padding: 0px 20px 0px 20px;
+    max-width: 600px;
   }
 .card {
     margin: 0.2rem;
