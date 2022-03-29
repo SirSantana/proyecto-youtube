@@ -10,6 +10,9 @@ export default function Menu(){
                 <Link href="/historia">
                 <a><button className={styles.button}>Ingles</button></a>
                 </Link>
+                <Link href="/porcentaje">
+                <a><button className={styles.button}>Dcto + Iva</button></a>
+                </Link>
                 <Link href="/nextjs">
                 <a><button className={styles.button}>Next.Js</button></a>
                 </Link>
