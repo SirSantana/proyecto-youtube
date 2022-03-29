@@ -5,7 +5,7 @@ import HistoriaModel from "../../../models/HistoriaModel";
 import { useEffect, useState } from "react";
 import Correct from "../../../components/Correct";
 
-let initial = 10;
+let initial = 5;
 
 export default function ResponseHistory({ data }) {
   const { pregunta,  link, _id, description } = data;
@@ -21,7 +21,7 @@ export default function ResponseHistory({ data }) {
     }, 1000);
     setTimeout(() => {
       setVisible(true);
-    }, 10000);
+    }, 5000);
   }, [visible]);
   
 
@@ -57,7 +57,9 @@ export default function ResponseHistory({ data }) {
               </a>
             </Link>
 
-            <button className={styles.button}>Siguiente</button>
+            <Link href={`/historia/${_id}/editar`}>
+            <a><button className={styles.button}>Editar</button></a>
+            </Link>
           </div>
         </div>
         <hr className={styles.hr} />
